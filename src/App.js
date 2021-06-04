@@ -30,7 +30,9 @@ function App() {
                       {!!logedin === true?  <Redirect to="/welcome" /> : <LoginPage setlogedin={setlogedin} logedin={logedin}/>}
                     </Route>
                     <Route path='/404' component={NotFound} />
-                    <Route path='/' component={NotFound} />
+                    <Redirect from="/login" to="/login" />
+                    <Redirect from="/welcome" to="/welcome"/>
+                    <Redirect from="/" to="/404" />
             </Switch>
         </BrowserRouter>
       </div>
