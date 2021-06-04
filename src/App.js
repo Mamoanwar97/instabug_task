@@ -21,10 +21,10 @@ function App() {
         <BrowserRouter>
             <Switch>
                     <Route exact path='/'>
-                      {logedin !== null? <Welcome setlogedin={setlogedin} logedin={logedin}/> : <Redirect to="/login" />}
+                      {!!logedin !== false? <Welcome setlogedin={setlogedin} logedin={logedin}/> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path='/welcome'>
-                      {logedin !== null? <Welcome setlogedin={setlogedin} logedin={logedin}/> : <Redirect to="/login" />}
+                      {!!logedin !== false? <Welcome setlogedin={setlogedin} logedin={logedin}/> : <Redirect to="/login" />}
                     </Route>
                     <Route exact path='/login'>
                       {!!logedin === true?  <Redirect to="/welcome" /> : <LoginPage setlogedin={setlogedin} logedin={logedin}/>}
